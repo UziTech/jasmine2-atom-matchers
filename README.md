@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/UziTech/jasmine2-atom-matchers.png)](https://travis-ci.org/UziTech/jasmine2-atom-matchers) <!-- [![Windows Build Status](https://ci.appveyor.com/api/projects/status/9vlhm6tark45cyov?svg=true)](https://ci.appveyor.com/project/UziTech/jasmine2-atom-matchers) -->
+[![Build Status](https://travis-ci.org/UziTech/jasmine2-atom-matchers.png)](https://travis-ci.org/UziTech/jasmine2-atom-matchers)
+[![Windows Build Status](https://ci.appveyor.com/api/projects/status/p95mwqblfyjd8qmf?svg=true)](https://ci.appveyor.com/project/UziTech/jasmine2-atom-matchers)
 
 # Jasmine 2.x Atom Matchers
 
