@@ -2,6 +2,8 @@
 
 # Jasmine 2.x Atom Matchers
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/UziTech/jasmine2-atom-matchers.svg)](https://greenkeeper.io/)
+
 This will add the matchers from Atom for Jasmine 2.x
 
 # Matchers
