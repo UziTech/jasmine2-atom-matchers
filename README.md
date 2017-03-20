@@ -5,6 +5,17 @@
 
 This will add the matchers from Atom for Jasmine 2.x
 
+# install
+
+```sh
+npm install --save-dev jasmine2-atom-matchers
+```
+
+```js
+// in your jasmine helpers.js
+require("jasmine2-atom-matchers")
+```
+
 # Matchers
 
 ## toBeInstanceOf(Class)
