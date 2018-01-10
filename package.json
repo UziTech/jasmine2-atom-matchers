@@ -23,7 +23,7 @@
     "jasmine-should-fail": "^1.0.2",
     "jquery": "^3.2.0",
     "jsdom": "^9.12.0",
-    "test-tag-publish": "^1.0.0"
+    "test-tag-publish": "*"
   },
   "dependencies": {
     "jquery": "^3.2.0",
