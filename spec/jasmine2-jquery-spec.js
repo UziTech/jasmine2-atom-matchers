@@ -1,25 +1,5 @@
 "use strict";
-
-var jsdom = require("jsdom");
-
-var $ = require("jquery")(jsdom.jsdom().defaultView);
-
-beforeAll(function (done) {
-	jsdom.env(
-		"<html><head></head><body></body></html>",
-		function (err, window) {
-			window.jasmine = global.jasmine;
-			for (var i in window) {
-				if (!global.hasOwnProperty(i)) {
-					global[i] = window[i];
-				}
-			}
-			global.HTMLElement = window.HTMLElement;
-			require("../src/jasmine2-atom-matchers");
-			done();
-		}
-	);
-});
+/* globals $ */
 
 describe("jasmine-jquery", function () {
 	beforeEach(function () {
@@ -185,7 +165,7 @@ describe("jasmine-jquery", function () {
 
 		it("should define toHaveData", function () {
 			var div = this.tag("div");
-			div[0].dataset = { test: "this" };
+			div[0].dataset.test = "this";
 			div.data({ test: "this" });
 			expect(div).toHaveData("test");
 			expect(div).toHaveData("test", "this");

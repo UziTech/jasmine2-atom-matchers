@@ -2,24 +2,6 @@
 
 var path = require("path");
 
-var jsdom = require("jsdom");
-
-beforeAll(function (done) {
-	jsdom.env(
-		"<html><head></head><body></body></html>",
-		function (err, window) {
-			window.jasmine = global.jasmine;
-			for (var i in window) {
-				if (!global.hasOwnProperty(i)) {
-					global[i] = window[i];
-				}
-			}
-			require("../src/jasmine2-atom-matchers");
-			done();
-		}
-	);
-});
-
 describe("jasmine2-atom-matchers", function () {
 	beforeEach(function () {
 		this.domContainer = document.createElement("div");
