@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/UziTech/jasmine2-atom-matchers.png)](https://travis-ci.org/UziTech/jasmine2-atom-matchers)
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/p95mwqblfyjd8qmf?svg=true)](https://ci.appveyor.com/project/UziTech/jasmine2-atom-matchers)
 
-# Jasmine 2.x Atom Matchers
+# Jasmine 2.x-3.x Atom Matchers
 
-This will add the matchers from Atom for Jasmine 2.x
+This will add the matchers from Atom for Jasmine 2.x or 3.x
 
 # install
 

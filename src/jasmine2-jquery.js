@@ -9,15 +9,15 @@
 	var $ = require("jquery");
 	var _ = require("underscore-plus");
 
-	jasmine.JQuery = function () {};
+	global.jasmine.JQuery = function () {};
 
-	jasmine.JQuery.browserTagCaseIndependentHtml = function (html) {
+	global.jasmine.JQuery.browserTagCaseIndependentHtml = function (html) {
 		var div = document.createElement("div");
 		div.innerHTML = html;
 		return div.innerHTML;
 	};
 
-	jasmine.JQuery.toElement = function (element) {
+	global.jasmine.JQuery.toElement = function (element) {
 		if (element instanceof HTMLElement) {
 			return element;
 		}
@@ -30,22 +30,22 @@
 		throw new Error(element + " is not an element");
 	};
 
-	jasmine.JQuery.elementToString = function (element) {
+	global.jasmine.JQuery.elementToString = function (element) {
 		try {
-			return jasmine.JQuery.toElement(element).outerHTML;
+			return global.jasmine.JQuery.toElement(element).outerHTML;
 		} catch (ex) {}
 		return element.toString();
 	};
 
-	jasmine.JQuery.elementToTagString = function (element) {
-		var matches = jasmine.JQuery.elementToString(element).match(/^<.*?>/);
+	global.jasmine.JQuery.elementToTagString = function (element) {
+		var matches = global.jasmine.JQuery.elementToString(element).match(/^<.*?>/);
 		if (!matches) {
 			return element.toString();
 		}
 		return matches[0];
 	};
 
-	jasmine.JQuery.matchersClass = {};
+	global.jasmine.JQuery.matchersClass = {};
 
 	var jQueryMatchers = {
 		toHaveClass: function (options, actual, className) {
@@ -56,7 +56,7 @@
 				result.pass = actual.hasClass(className);
 			}
 			var haveOrNotHave = (result.pass ? "not have" : "have");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			result.message = "Expected '" + actualString + "' to " + haveOrNotHave + " class '" + className + "'";
 			return result;
 		},
@@ -70,7 +70,7 @@
 				result.pass = actual.is(":visible");
 			}
 			var beOrNotBe = (result.pass ? "not be" : "be");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			result.message = "Expected '" + actualString + "' to " + beOrNotBe + " visible";
 			return result;
 		},
@@ -83,7 +83,7 @@
 				result.pass = actual.is(":hidden");
 			}
 			var beOrNotBe = (result.pass ? "not be" : "be");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			result.message = "Expected '" + actualString + "' to " + beOrNotBe + " hidden";
 			return result;
 		},
@@ -96,7 +96,7 @@
 				result.pass = actual.is(":selected");
 			}
 			var beOrNotBe = (result.pass ? "not be" : "be");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			result.message = "Expected '" + actualString + "' to " + beOrNotBe + " selected";
 			return result;
 		},
@@ -109,7 +109,7 @@
 				result.pass = actual.is(":checked");
 			}
 			var beOrNotBe = (result.pass ? "not be" : "be");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			result.message = "Expected '" + actualString + "' to " + beOrNotBe + " checked";
 			return result;
 		},
@@ -122,7 +122,7 @@
 				result.pass = actual.is(":empty");
 			}
 			var beOrNotBe = (result.pass ? "not be" : "be");
-			var actualString = jasmine.JQuery.elementToString(actual);
+			var actualString = global.jasmine.JQuery.elementToString(actual);
 			result.message = "Expected '" + actualString + "' to " + beOrNotBe + " empty";
 			return result;
 		},
@@ -131,7 +131,7 @@
 			var result = {};
 			result.pass = (actual instanceof HTMLElement || actual.length > 0);
 			var toOrNotTo = (result.pass ? "not to" : "to");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			result.message = "Expected '" + actualString + "' " + toOrNotTo + " exist";
 			return result;
 		},
@@ -146,7 +146,7 @@
 			}
 			result.pass = hasProperty(actualAttributeValue, expectedAttributeValue);
 			var haveOrNotHave = (result.pass ? "not have" : "have");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			var attrString = attributeName + (typeof expectedAttributeValue !== "undefined" ? "='" + expectedAttributeValue.replace("'", "\\'") + "'" : "");
 			result.message = "Expected '" + actualString + "' to " + haveOrNotHave + " attribute " + attrString + "";
 			return result;
@@ -160,7 +160,7 @@
 				result.pass = actual.attr("id") === id;
 			}
 			var haveOrNotHave = (result.pass ? "not have" : "have");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			result.message = "Expected '" + actualString + "' to " + haveOrNotHave + " id '" + id + "'";
 			return result;
 		},
@@ -173,9 +173,9 @@
 			} else {
 				actualHTML = actual.html();
 			}
-			result.pass = actualHTML === jasmine.JQuery.browserTagCaseIndependentHtml(html);
+			result.pass = actualHTML === global.jasmine.JQuery.browserTagCaseIndependentHtml(html);
 			var haveOrNotHave = (result.pass ? "not have" : "have");
-			var actualString = jasmine.JQuery.elementToString(actual);
+			var actualString = global.jasmine.JQuery.elementToString(actual);
 			result.message = "Expected '" + actualString + "' to " + haveOrNotHave + " html '" + html + "'";
 			return result;
 		},
@@ -195,7 +195,7 @@
 				result.pass = actualText === text;
 			}
 			var haveOrNotHave = (result.pass ? "not have" : "have");
-			var actualString = jasmine.JQuery.elementToString(actual);
+			var actualString = global.jasmine.JQuery.elementToString(actual);
 			result.message = "Expected '" + actualString + "' to " + haveOrNotHave + " text '" + text + "'";
 			return result;
 		},
@@ -208,7 +208,7 @@
 				result.pass = actual.val() === value;
 			}
 			var haveOrNotHave = (result.pass ? "not have" : "have");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			result.message = "Expected '" + actualString + "' to " + haveOrNotHave + " value '" + value + "'";
 			return result;
 		},
@@ -222,7 +222,7 @@
 				result.pass = hasProperty(actual.data(key), expectedValue);
 			}
 			var haveOrNotHave = (result.pass ? "not have" : "have");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			var dataString = key + (typeof expectedValue !== "undefined" ? "='" + expectedValue.replace("'", "\\'") + "'" : "");
 			result.message = "Expected '" + actualString + "' to " + haveOrNotHave + " data " + dataString + "";
 			return result;
@@ -236,7 +236,7 @@
 				result.pass = actual.is(selector);
 			}
 			var matchOrNotMatch = (result.pass ? "not match" : "match");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			result.message = "Expected '" + actualString + "' to " + matchOrNotMatch + " selector " + selector + "";
 			return result;
 		},
@@ -253,8 +253,8 @@
 				result.pass = actual.find(contained).length > 0;
 			}
 			var toOrNotTo = (result.pass ? "not to" : "to");
-			var actualString = jasmine.JQuery.elementToString(actual);
-			var containedString = (typeof contained === "string" ? contained : jasmine.JQuery.elementToString(contained));
+			var actualString = global.jasmine.JQuery.elementToString(actual);
+			var containedString = (typeof contained === "string" ? contained : global.jasmine.JQuery.elementToString(contained));
 			result.message = "Expected '" + actualString + "' " + toOrNotTo + " contain '" + containedString + "'";
 			return result;
 		},
@@ -267,7 +267,7 @@
 				result.pass = actual.is(":disabled");
 			}
 			var beOrNotBe = (result.pass ? "not be" : "be");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			result.message = "Expected '" + actualString + "' to " + beOrNotBe + " disabled";
 			return result;
 		},
@@ -278,7 +278,7 @@
 			var events = actual.data("events");
 			result.pass = events && events[eventName].length > 0;
 			var toOrNotTo = (result.pass ? "not to" : "to");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			result.message = "Expected '" + actualString + "' " + toOrNotTo + " handle '" + eventName + "'";
 			return result;
 		},
@@ -295,7 +295,7 @@
 				}
 			}
 			var toOrNotTo = (result.pass ? "not to" : "to");
-			var actualString = actual.selector ? actual.selector : jasmine.JQuery.elementToTagString(actual);
+			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
 			result.message = "Expected '" + actualString + "' " + toOrNotTo + " handle '" + eventName + "' with '" + eventHandler.name + "'";
 			return result;
 		}
@@ -310,8 +310,8 @@
 	};
 
 	function bindMatcher(methodName) {
-		var builtInMatcher = jasmine.matchers[methodName];
-		jasmine.JQuery.matchersClass[methodName] = function (util, customEqualityTesters) {
+		var builtInMatcher = global.jasmine.matchers[methodName];
+		global.jasmine.JQuery.matchersClass[methodName] = function (util, customEqualityTesters) {
 			return {
 				compare: function (actual) {
 					if (actual && (actual.jquery || actual instanceof HTMLElement)) {
@@ -340,8 +340,8 @@
 		bindMatcher(methodName);
 	}
 
-	beforeEach(function () {
-		jasmine.addMatchers(jasmine.JQuery.matchersClass);
+	global.beforeEach(function () {
+		global.jasmine.addMatchers(global.jasmine.JQuery.matchersClass);
 	});
 
 })(typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {});

@@ -18,9 +18,9 @@
 	var fs = require("fs");
 	var _ = require("underscore-plus");
 
-	beforeEach(function () {
+	global.beforeEach(function () {
 
-		jasmine.addCustomEqualityTester(function (a, b) {
+		global.jasmine.addCustomEqualityTester(function (a, b) {
 			// Use underscore's definition of equality for toEqual assertions
 			var result = _.isEqual(a, b);
 			if (result) {
@@ -29,14 +29,14 @@
 			// return undefined to allow jasmines regular toEqual
 		});
 
-		jasmine.addMatchers({
+		global.jasmine.addMatchers({
 			toBeInstanceOf: function () {
 				return {
 					compare: function (actual, expected) {
 						var result = {};
 						result.pass = actual instanceof expected;
 						var beOrNotBe = (result.pass ? "not be" : "be");
-						result.message = "Expected " + jasmine.pp(actual) + " to " + beOrNotBe + " instance of " + expected.name + " class";
+						result.message = "Expected " + global.jasmine.pp(actual) + " to " + beOrNotBe + " instance of " + expected.name + " class";
 						return result;
 					}
 				};
@@ -76,9 +76,9 @@
 					compare: function (actual) {
 						var result = {};
 						var element = (actual.jquery ? actual.get(0) : actual);
-						result.pass = (element === document.activeElement) || element.contains(document.activeElement);
+						result.pass = (element === global.document.activeElement) || element.contains(global.document.activeElement);
 						var toOrNotTo = (result.pass ? "not to" : "to");
-						if (!document.hasFocus()) {
+						if (!global.document.hasFocus()) {
 							console.error("Specs will fail because the Dev Tools have focus. To fix this close the Dev Tools or click the spec runner.");
 						}
 						result.message = "Expected element '" + actual + "' or its descendants " + toOrNotTo + " have focus.";
