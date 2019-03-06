@@ -2,7 +2,7 @@
 
 var JSDOM = require("jsdom").JSDOM;
 
-var jsdomWindow = (new JSDOM("<!doctype html><html><head><meta charset='utf-8'></head><body></body></html>")).window;
+var jsdomWindow = (new JSDOM("<!doctype html><html><head><meta charset='utf-8'></head><body></body></html>", {url: "http://localhost/"})).window;
 
 var $ = require("jquery")(jsdomWindow);
 
