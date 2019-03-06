@@ -19,13 +19,13 @@
   "author": "Tony Brix",
   "license": "MIT",
   "devDependencies": {
-    "jasmine": "^3.0.0",
-    "jsdom": "^11.6.2",
+    "jasmine": "^3.3.1",
+    "jsdom": "^13.2.0",
     "test-tag-publish": "*"
   },
   "dependencies": {
     "jquery": "^3.3.1",
-    "underscore-plus": "^1.6.6"
+    "underscore-plus": "^1.6.8"
   },
   "peerDependencies": {
     "jasmine": ">=2 <4"
