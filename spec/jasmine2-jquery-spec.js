@@ -58,27 +58,27 @@ describe("jasmine-jquery", function () {
 			expect(div[0]).not.toHaveClass("invalid");
 		});
 
-		// it("should define toBeVisible", function () {
-		// 	var div = this.tag("div").attach();
-		// 	expect(div).toBeVisible();
-		// 	expect(div[0]).toBeVisible();
-		// 	div.hide();
-		// 	expect(div).not.toBeVisible();
-		// 	expect(div[0]).not.toBeVisible();
-		// });
-		//
-		// it("should define toBeHidden", function () {
-		// 	var div = this.tag("div").attach();
-		// 	div.hide();
-		// 	expect(div).toBeHidden();
-		// 	expect(div[0]).toBeHidden();
-		// 	div.show();
-		// 	expect(div).not.toBeHidden();
-		//
-		// 	// don't ask me why this is needed
-		// 	div.text("test");
-		// 	expect(div[0]).not.toBeHidden();
-		// });
+		xit("should define toBeVisible", function () {
+			var div = this.tag("div").attach();
+			expect(div).toBeVisible();
+			expect(div[0]).toBeVisible();
+			div.hide();
+			expect(div).not.toBeVisible();
+			expect(div[0]).not.toBeVisible();
+		});
+
+		xit("should define toBeHidden", function () {
+			var div = this.tag("div").attach();
+			div.hide();
+			expect(div).toBeHidden();
+			expect(div[0]).toBeHidden();
+			div.show();
+			expect(div).not.toBeHidden();
+
+			// don't ask me why this is needed
+			div.text("test");
+			expect(div[0]).not.toBeHidden();
+		});
 
 		it("should define toBeSelected", function () {
 			var option1 = this.tag("option");
