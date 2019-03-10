@@ -20,7 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "jasmine": "^3.3.1",
-    "jsdom": "^13.2.0",
+    "jsdom": "^14.0.0",
     "test-tag-publish": "*"
   },
   "dependencies": {
