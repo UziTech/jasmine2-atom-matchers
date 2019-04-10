@@ -24,7 +24,7 @@
     "test-tag-publish": "*"
   },
   "dependencies": {
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "underscore-plus": "^1.7.0"
   },
   "peerDependencies": {
