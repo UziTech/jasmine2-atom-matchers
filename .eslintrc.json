@@ -6,7 +6,8 @@
 		"atomtest": true
 	},
 	"parserOptions": {
-		"ecmaVersion": 5
+		"ecmaVersion": 5,
+		"sourceType": "script"
 	},
 	"rules": {
 		"semi": 2,
