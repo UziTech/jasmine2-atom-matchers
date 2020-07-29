@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/UziTech/jasmine2-atom-matchers/compare/v1.1.4...v1.1.5) (2020-07-29)
+
+
+### Bug Fixes
+
+* change error if document does not have focus ([e30a4a7](https://github.com/UziTech/jasmine2-atom-matchers/commit/e30a4a7de6c163f93d63f8c923eab2b7736878ef))
+
 ## [1.1.4](https://github.com/UziTech/jasmine2-atom-matchers/compare/v1.1.3...v1.1.4) (2020-05-05)
 
 
