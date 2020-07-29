@@ -79,7 +79,7 @@
 						result.pass = (element === global.document.activeElement) || element.contains(global.document.activeElement);
 						var toOrNotTo = (result.pass ? "not to" : "to");
 						if (!global.document.hasFocus()) {
-							console.error("Specs will fail because the Dev Tools have focus. To fix this close the Dev Tools or click the spec runner.");
+							console.error("Specs may fail when the Dev Tools have focus. To fix this close the Dev Tools or click the spec runner.");
 						}
 						result.message = "Expected element '" + actual + "' or its descendants " + toOrNotTo + " have focus.";
 						return result;
