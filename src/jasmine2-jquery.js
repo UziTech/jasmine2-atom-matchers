@@ -147,7 +147,7 @@
 			result.pass = hasProperty(actualAttributeValue, expectedAttributeValue);
 			var haveOrNotHave = (result.pass ? "not have" : "have");
 			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
-			var attrString = attributeName + (typeof expectedAttributeValue !== "undefined" ? "='" + expectedAttributeValue.replace("'", "\\'") + "'" : "");
+			var attrString = attributeName + (typeof expectedAttributeValue !== "undefined" ? "='" + expectedAttributeValue.replace(/'/g, "\\'") + "'" : "");
 			result.message = "Expected '" + actualString + "' to " + haveOrNotHave + " attribute " + attrString + "";
 			return result;
 		},
@@ -223,7 +223,7 @@
 			}
 			var haveOrNotHave = (result.pass ? "not have" : "have");
 			var actualString = actual.selector ? actual.selector : global.jasmine.JQuery.elementToTagString(actual);
-			var dataString = key + (typeof expectedValue !== "undefined" ? "='" + expectedValue.replace("'", "\\'") + "'" : "");
+			var dataString = key + (typeof expectedValue !== "undefined" ? "='" + expectedValue.replace(/'/g, "\\'") + "'" : "");
 			result.message = "Expected '" + actualString + "' to " + haveOrNotHave + " data " + dataString + "";
 			return result;
 		},
