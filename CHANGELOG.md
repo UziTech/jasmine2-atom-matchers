@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/UziTech/jasmine2-atom-matchers/compare/v1.1.5...v1.1.6) (2020-10-01)
+
+
+### Bug Fixes
+
+* escape all quotes ([9a713ba](https://github.com/UziTech/jasmine2-atom-matchers/commit/9a713baceb3d728be79e83755c3667086fd5cb35))
+
 ## [1.1.5](https://github.com/UziTech/jasmine2-atom-matchers/compare/v1.1.4...v1.1.5) (2020-07-29)
 
 
