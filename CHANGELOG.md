@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/UziTech/jasmine2-atom-matchers/compare/v1.1.6...v1.1.7) (2020-10-01)
+
+
+### Bug Fixes
+
+* escape backslash character ([665cc20](https://github.com/UziTech/jasmine2-atom-matchers/commit/665cc20c36cbf33c7f58683d7573e74fac716338))
+
 ## [1.1.6](https://github.com/UziTech/jasmine2-atom-matchers/compare/v1.1.5...v1.1.6) (2020-10-01)
 
 
