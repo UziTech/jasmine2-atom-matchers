@@ -25,7 +25,7 @@
     "eslint": "^7.19.0",
     "jasmine": "^3.6.4",
     "jsdom": "^16.4.0",
-    "semantic-release": "^17.3.7"
+    "semantic-release": "^17.3.8"
   },
   "dependencies": {
     "jquery": "^3.5.1",
