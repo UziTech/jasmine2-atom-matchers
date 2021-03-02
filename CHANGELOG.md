@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/UziTech/jasmine2-atom-matchers/compare/v1.1.7...v1.1.8) (2021-03-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency jquery to ^3.6.0 ([16717fc](https://github.com/UziTech/jasmine2-atom-matchers/commit/16717fc094bb9dfeb697ecb7da977102090b58d1))
+
 ## [1.1.7](https://github.com/UziTech/jasmine2-atom-matchers/compare/v1.1.6...v1.1.7) (2020-10-01)
 
 
