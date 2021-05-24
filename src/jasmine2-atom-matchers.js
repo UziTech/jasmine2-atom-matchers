@@ -93,7 +93,7 @@
 						// TODO: this needs to be fixed (since when is display "inline" hidden)
 						var result = {};
 						var element = (actual.jquery ? actual.get(0) : actual);
-						var computedStyle = getComputedStyle(element)
+						var computedStyle = getComputedStyle(element);
 						result.pass = computedStyle.display !== "none" && computedStyle.visibility === "visible" && !element.hidden;
 						var toOrNotTo = (result.pass ? "not to" : "to");
 						result.message = "Expected element '" + element + "' or its descendants " + toOrNotTo + " show.";
