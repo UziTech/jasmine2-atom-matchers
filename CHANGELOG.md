@@ -1,3 +1,10 @@
+## [1.1.9](https://github.com/UziTech/jasmine2-atom-matchers/compare/v1.1.8...v1.1.9) (2021-05-24)
+
+
+### Bug Fixes
+
+* fix toShow() ([0c0b6c7](https://github.com/UziTech/jasmine2-atom-matchers/commit/0c0b6c7f6b9ff8b4f61efaa53fa01917a8643147))
+
 ## [1.1.8](https://github.com/UziTech/jasmine2-atom-matchers/compare/v1.1.7...v1.1.8) (2021-03-02)
 
 
